@@ -1,10 +1,14 @@
 const express = require('express');
+const LoginVerify = require('./middlewares/loginValidation');
 
+const loginController = require('./controllers/login.controller');
 // ...
 
 const app = express();
 
 app.use(express.json());
+
+app.post('/login', LoginVerify, loginController.getLogin);
 
 // ...
 
