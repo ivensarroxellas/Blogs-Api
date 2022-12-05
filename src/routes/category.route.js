@@ -6,5 +6,6 @@ const CategoryValidation = require('../middlewares/categoryValidation');
 const { tokenValidation } = require('../auth/jwtConfig');
 
 routes.post('/', tokenValidation, CategoryValidation, categoryController.createCategory);
+routes.get('/', tokenValidation, categoryController.getAllCategory);
 
 module.exports = routes;
